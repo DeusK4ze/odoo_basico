@@ -25,6 +25,8 @@
                             <field name="longo_en_cms"/>
                             <field name="ancho_en_cms"/>
                             <field name="peso"/>
+                            <field name="autorizado"/>
+                            <field name="sexo_traducido"/>
                         </group>
                     </sheet>
                 </form>
@@ -42,6 +44,8 @@
                     <field name="longo_en_cms"/>
                     <field name="ancho_en_cms"/>
                     <field name="peso"/>
+                    <field name="autorizado"/>
+                    <field name="sexo_traducido"/>
                 </tree>
             </field>
         </record>
