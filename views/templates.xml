@@ -60,8 +60,6 @@
             <field name="ancho_en_cms">4</field>
             <field name="peso">4</field>
         </record>
-
-
     </data>
 
     <data >
