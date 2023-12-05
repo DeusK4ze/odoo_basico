@@ -73,9 +73,15 @@
                             </page>
                             <page string="Binary">
                                 <group>
-
+                                    <group>
+                                        <field name="foto" widget="image" class="oe_avatar"/>
+                                        <field name="adxunto_nome" invisible="1"/>
+                                        <field name="adxunto" filename="adxunto_nome"/>
+                                    </group>
+                                    <group>
+                                        <field name="foto" widget="image"/>
+                                    </group>
                                 </group>
-
                             </page>
                             <page string="Moedas">
                                 <group>
