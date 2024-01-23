@@ -1,7 +1,8 @@
 <odoo>
     <data>
-        <menuitem id="main_odoo_basico" name="nivel 0. odoo basico"/>
-        <menuitem id="menu_odoo_informacion" name="Menu nivel 1.Información." parent="main_odoo_basico" action="informacion_list_action"/>
-        <menuitem id="menu_odoo_suceso" name="nivel 1. Suceso" parent="main_odoo_basico" action="suceso_list_action"/>
+        <menuitem id="main_odoo_basico" name="nivel 0. odoo basico" />
+        <menuitem id="menu_odoo_informacion" name="Menu nivel 1.Información." parent="main_odoo_basico" action="informacion_list_action" sequence="7"/>
+        <menuitem id="menu_odoo_suceso" name="nivel 1. Suceso" parent="main_odoo_basico" action="suceso_list_action" sequence="8"/>
+        <menuitem id="menu_odoo_pedido" name="nivel 2. Pedido" parent="main_odoo_basico" action="pedido_list_action" sequence="9"  />
     </data>
 </odoo>
