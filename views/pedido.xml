@@ -1,11 +1,37 @@
 <odoo>
     <data>
+        <!-- actions opening views on models -->
         <record model="ir.actions.act_window" id="pedido_list_action">
-            <field name="name">A accion de pedido</field>
+            <field name="name">A acción de pedido</field>
             <field name="res_model">odoo_basico.pedido</field>
-            <field name="view_mode">tree</field>
+            <field name="view_mode">tree,form</field>
             <field name="help" type="html">
                 <p class="o_view_nocontent_smiling_face">Tes que crear o primeiro rexistro</p>
+            </field>
+        </record>
+
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="pedido_form_view">
+            <field name="name">pedido.form</field>
+            <field name="model">odoo_basico.pedido</field>
+            <field name="arch" type="xml">
+                <form string="Formulario pedidos">
+                    <header>
+                        <button name="actualizadorSexo" type="object" string="Actualiza o campo Sexo do modelo información"/>
+                        <button name="creaRexistroInformacion" type="object" string="Crea un rexistro do modelo información"/>
+                        <button name="actualizaRexistroInformacion" type="object" string="Actualiza o modelo creado en rexistro información"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <separator string="Visualizar e engadir"/>
+                        <field name="lineapedido_ids"/>
+                        <!--Se quixeramos que non se poideran editar as lineapedido:
+                        <separator string="Só visualizar"/>
+                        <field name="lineapedido_ids" readonly="1"/>-->
+                    </sheet>
+                </form>
             </field>
         </record>
 
@@ -13,9 +39,8 @@
             <field name="name">pedido.tree</field>
             <field name="model">odoo_basico.pedido</field>
             <field name="arch" type="xml">
-                <tree string="pedido Tree">
+                <tree string="Lista de pedidos">
                     <field name="name"/>
-                    <field name="descripcion"/>
                 </tree>
             </field>
         </record>

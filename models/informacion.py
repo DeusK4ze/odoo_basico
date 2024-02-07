@@ -19,7 +19,7 @@ class informacion(models.Model):
     peso = fields.Float(digits=(6, 2), default=2.7, string="Peso en Kg")
     densidade = fields.Float(compute="_densidade", store=True, string="Densidade:")
     autorizado = fields.Boolean(string="¿Autorizado?", default=True)
-    sexo_traducido = fields.Selection([('Hombre', 'Home'), ('Mujer', 'Muller'), ('Otros', 'Outros')], string='Sexo',required=True)
+    sexo_traducido = fields.Selection([('Hombre', 'Home'), ('Mujer', 'Muller'), ('Otros', 'Outros')], string='Sexo')
     foto = fields.Binary(string='Foto')
     adxunto_nome = fields.Char(string="Nome Adxunto")
     adxunto = fields.Binary(string="Arquivo adxunto")
@@ -27,8 +27,7 @@ class informacion(models.Model):
     moeda_id = fields.Many2one('res.currency', domain="[('position','=','after')]")
     # con domain, filtramos os valores mostrados. Pode ser mediante unha constante (vai entre comillas) ou unha variable
     moeda_euro_id = fields.Many2one('res.currency',
-                                    default=lambda self: self.env['res.currency'].search([('name', '=', "EUR")],
-                                                                                         limit=1))
+                                    default=lambda self: self.env['res.currency'].search([('name', '=', "EUR")], limit=1))
     gasto_en_euros = fields.Monetary("Gasto en Euros", 'moeda_euro_id')
     moeda_en_texto = fields.Char(related="moeda_id.currency_unit_label", string="Moeda en formato texto", store=True)
     creador_da_moeda = fields.Char(related="moeda_id.create_uid.login", string="Usuario creador da moeda", store=True)
@@ -60,3 +59,5 @@ class informacion(models.Model):
             if rexistro.peso < 1 or rexistro.peso > 4:
                 raise ValidationError('Os peso de %s ten que ser entre 1 e 4 ' % rexistro.name)
 
+    def _cambia_campo_sexo(self, rexistro):
+        rexistro.sexo_traducido = "Hombre"
