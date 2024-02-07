@@ -49,7 +49,6 @@
                                     <th class="text-left">Titulo(name)</th>
                                     <th class="text-left">Peso</th>
                                     <th class="text-left">Autorizado</th>
-                                    <th class="text-left">Datas</th>
                                     <th class="text-left">Sexo</th>
                                 </tr>
                             </thead>
